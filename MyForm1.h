@@ -40,6 +40,7 @@ namespace DSAproj {
 			}
 		}
 	private: System::Windows::Forms::ListView^ listView1;
+	private: System::Windows::Forms::Button^ button1;
 	protected:
 
 	protected:
@@ -58,6 +59,7 @@ namespace DSAproj {
 		void InitializeComponent(void)
 		{
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// listView1
@@ -71,11 +73,27 @@ namespace DSAproj {
 			this->listView1->TabIndex = 0;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Location = System::Drawing::Point(256, 317);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(103, 50);
+			this->button1->TabIndex = 1;
+			this->button1->Text = L"Okay";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
+			// 
 			// MyForm1
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::Black;
 			this->ClientSize = System::Drawing::Size(622, 391);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->listView1);
 			this->Name = L"MyForm1";
 			this->Text = L"Output";
@@ -99,5 +117,9 @@ namespace DSAproj {
 		}
 	}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->Close();
+	}
 	};
 }
